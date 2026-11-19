@@ -1,0 +1,45 @@
+
+# Python environment
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# VS Code
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+
+# Test and development files
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Generated outputs (grafik eksperimen lokal)
+outputs/
+
+# Jangan upload data backup atau duplikat
+*.bak.csv
+*_backup.csv

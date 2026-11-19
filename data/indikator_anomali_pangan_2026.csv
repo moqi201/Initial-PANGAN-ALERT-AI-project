@@ -1,0 +1,131 @@
+Tahun,Bulan,Komoditas,QIPA,AIPA,IFPA,Status
+2026,Januari,Beras Premium,-1.971573017,-0.856234056,-1.30236964,Alert (Low Price)
+2026,Januari,Beras Medium,-1.901395415,-0.954519503,-1.333269868,Alert (Low Price)
+2026,Januari,Cabai Merah Keriting,-1.860356762,-2.231149254,-2.082832258,Alert (Low Price)
+2026,Januari,Cabai Rawit Merah,-0.168715044,-2.036697683,-1.289504628,Alert (Low Price)
+2026,Januari,Bawang Merah,-0.652034855,0.146238417,-0.173070892,Normal
+2026,Januari,Bawang Putih,-0.157867954,-1.059996685,-0.699145193,Warning (Low Price)
+2026,Januari,Daging Sapi Murni,0.758099103,-1.355278848,-0.509927667,Warning (Low Price)
+2026,Januari,Daging Ayam Ras,-0.03399794,0.274395199,0.151037944,Normal
+2026,Januari,Telur Ayam Ras,-0.78806401,-0.225726927,-0.45066176,Normal
+2026,Januari,Kedelai Biji Kering,0.151642775,0.33134923,0.259466648,Normal
+2026,Januari,Minyak Goreng Kemasan,-0.581950219,-0.237838076,-0.375482934,Normal
+2026,Januari,Tepung Terigu Curah,-0.224137306,-0.418233928,-0.340595279,Normal
+2026,Januari,Gula Pasir Lokal/Curah,-0.557317102,-0.990910593,-0.817473196,Warning (Low Price)
+2026,Februari,Beras Premium,-0.872155369,-0.793334004,-0.82486255,Warning (Low Price)
+2026,Februari,Beras Medium,-1.584692219,-1.08742182,-1.28632998,Alert (Low Price)
+2026,Februari,Cabai Merah Keriting,-1.432354532,-0.987625149,-1.165516902,Alert (Low Price)
+2026,Februari,Cabai Rawit Merah,0.870376824,-0.210391789,0.221915656,Normal
+2026,Februari,Bawang Merah,-0.320331479,0.592607777,0.227432074,Normal
+2026,Februari,Bawang Putih,-0.297215543,-0.627704254,-0.49550877,Normal
+2026,Februari,Daging Sapi Murni,1.655813802,-1.254415853,-0.090323991,Normal
+2026,Februari,Daging Ayam Ras,2.415649625,1.514580737,1.875008292,Alert (High Price)
+2026,Februari,Telur Ayam Ras,-0.575517057,-0.23574228,-0.371652191,Normal
+2026,Februari,Kedelai Biji Kering,0.065843444,0.193717739,0.142568021,Normal
+2026,Februari,Minyak Goreng Kemasan,-0.593268708,-0.531763792,-0.556365758,Warning (Low Price)
+2026,Februari,Tepung Terigu Curah,-0.304119535,-0.55476511,-0.45450688,Normal
+2026,Februari,Gula Pasir Lokal/Curah,-0.673554891,-1.087247502,-0.921770457,Warning (Low Price)
+2026,Maret,Beras Premium,-0.627596207,-0.493368546,-0.54705961,Warning (Low Price)
+2026,Maret,Beras Medium,-1.326556462,-0.856300538,-1.044402907,Alert (Low Price)
+2026,Maret,Cabai Merah Keriting,-1.845911758,-1.074533437,-1.383084765,Alert (Low Price)
+2026,Maret,Cabai Rawit Merah,-0.121966306,-0.560758817,-0.385241813,Normal
+2026,Maret,Bawang Merah,-1.928329884,-0.612310794,-1.13871843,Alert (Low Price)
+2026,Maret,Bawang Putih,-1.037557603,-0.930816624,-0.973513016,Warning (Low Price)
+2026,Maret,Daging Sapi Murni,5.957991259,0.484330765,2.673794963,Alert (High Price)
+2026,Maret,Daging Ayam Ras,0.838754801,1.474635673,1.220283324,Alert (High Price)
+2026,Maret,Telur Ayam Ras,0.272431144,0.3575415,0.323497358,Normal
+2026,Maret,Kedelai Biji Kering,-0.069515477,0.285823904,0.143688151,Normal
+2026,Maret,Minyak Goreng Kemasan,-0.791214755,-0.336434422,-0.518346555,Warning (Low Price)
+2026,Maret,Tepung Terigu Curah,-0.456300662,-0.306721172,-0.366552968,Normal
+2026,Maret,Gula Pasir Lokal/Curah,-0.340716331,-0.520727457,-0.448723007,Normal
+2026,April,Beras Premium,-0.363727601,-0.414864626,-0.394409816,Normal
+2026,April,Beras Medium,-1.111397793,-0.942626191,-1.010134832,Alert (Low Price)
+2026,April,Cabai Merah Keriting,0.638963346,-2.201968414,-1.06559571,Alert (Low Price)
+2026,April,Cabai Rawit Merah,2.732360742,-0.882836113,0.563242629,Warning (High Price)
+2026,April,Bawang Merah,-1.053977274,-0.482611096,-0.711157567,Warning (Low Price)
+2026,April,Bawang Putih,-1.217412108,-1.183431878,-1.19702397,Alert (Low Price)
+2026,April,Daging Sapi Murni,1.028896287,0.839367333,0.915178914,Warning (High Price)
+2026,April,Daging Ayam Ras,0.066314544,1.003577012,0.628672025,Warning (High Price)
+2026,April,Telur Ayam Ras,0.074554173,0.629847257,0.407730023,Normal
+2026,April,Kedelai Biji Kering,0.215485154,0.480164503,0.374292763,Normal
+2026,April,Minyak Goreng Kemasan,-0.319282827,-0.074273221,-0.172277063,Normal
+2026,April,Tepung Terigu Curah,-0.718888364,-0.175604372,-0.392917969,Normal
+2026,April,Gula Pasir Lokal/Curah,-0.191475726,-0.216976237,-0.206776032,Normal
+2026,Mei,Beras Premium,1.478968594,0.207183887,0.207183887,Normal
+2026,Mei,Beras Medium,1.012336144,-0.402007121,-0.402007121,Normal
+2026,Mei,Cabai Merah Keriting,1.191522323,0.272077204,0.272077204,Normal
+2026,Mei,Cabai Rawit Merah,0.689294279,0.621879876,0.621879876,Warning (High Price)
+2026,Mei,Bawang Merah,-0.756447592,-0.055797256,-0.055797256,Normal
+2026,Mei,Bawang Putih,-0.57856197,-0.843696619,-0.843696619,Warning (Low Price)
+2026,Mei,Daging Sapi Murni,0.43391564,0.780976319,0.780976319,Warning (High Price)
+2026,Mei,Daging Ayam Ras,-1.770732827,-0.04226338,-0.04226338,Normal
+2026,Mei,Telur Ayam Ras,-1.350834131,-0.613372533,-0.613372533,Warning (Low Price)
+2026,Mei,Kedelai Biji Kering,0.704081649,0.63100047,0.63100047,Warning (High Price)
+2026,Mei,Minyak Goreng Kemasan,-0.044618781,-0.031910424,-0.031910424,Normal
+2026,Mei,Tepung Terigu Curah,-0.356284914,-0.283445642,-0.283445642,Normal
+2026,Mei,Gula Pasir Lokal/Curah,-0.074120429,-0.197541299,-0.197541299,Normal
+2026,Juni,Beras Premium,0.972012399,-0.861561465,-0.128131919,Normal
+2026,Juni,Beras Medium,0.753485192,-1.694854848,-0.715518832,Warning (Low Price)
+2026,Juni,Cabai Merah Keriting,0.893824211,0.275232788,0.522669357,Warning (High Price)
+2026,Juni,Cabai Rawit Merah,0.435520684,0.430411454,0.432455146,Normal
+2026,Juni,Bawang Merah,0.112073567,0.378731743,0.272068473,Normal
+2026,Juni,Bawang Putih,0.212576058,-0.328004068,-0.111772018,Normal
+2026,Juni,Daging Sapi Murni,-0.363327807,1.194664747,0.571467725,Warning (High Price)
+2026,Juni,Daging Ayam Ras,-2.158721714,1.512428488,0.043968407,Normal
+2026,Juni,Telur Ayam Ras,-1.855504104,-0.800947773,-1.222770306,Alert (Low Price)
+2026,Juni,Kedelai Biji Kering,0.862168831,0.65152973,0.735785371,Warning (High Price)
+2026,Juni,Minyak Goreng Kemasan,0.564720262,0.006438701,-0.031910424,Normal
+2026,Juni,Tepung Terigu Curah,0.292119125,-0.240892385,-0.283445642,Normal
+2026,Juni,Gula Pasir Lokal/Curah,0.572942029,-0.367547382,-0.19754,Normal
+2026,Juli,Beras Premium,0.721822065,-0.999043277,-0.31069714,Normal
+2026,Juli,Beras Medium,0.224975261,-1.837076003,-1.012255498,Alert (Low Price)
+2026,Juli,Cabai Merah Keriting,0.142741266,-0.005784491,0.053625812,Normal
+2026,Juli,Cabai Rawit Merah,-0.864792682,-0.465059447,-0.624952741,Warning (Low Price)
+2026,Juli,Bawang Merah,-0.188553863,-0.536032179,-0.397040853,Normal
+2026,Juli,Bawang Putih,0.73019067,-0.065946433,0.252508408,Normal
+2026,Juli,Daging Sapi Murni,2.20499653,1.788762662,1.955256209,Alert (High Price)
+2026,Juli,Daging Ayam Ras,-1.018884221,1.339286787,0.396018384,Normal
+2026,Juli,Telur Ayam Ras,-2.785936636,-1.254390833,-1.867009154,Alert (Low Price)
+2026,Juli,Kedelai Biji Kering,0.815373454,0.727286079,0.762521029,Warning (High Price)
+2026,Juli,Minyak Goreng Kemasan,0.831372023,0.04731248,0.360936297,Normal
+2026,Juli,Tepung Terigu Curah,0.321367139,-0.157448803,0.034077574,Normal
+2026,Juli,Gula Pasir Lokal/Curah,0.323203443,-0.412931744,-0.118477669,Normal
+2026,Agustus,Beras Premium,0.212541825,-1.202809242,-0.636668815,Warning (Low Price)
+2026,Agustus,Beras Medium,-0.269446077,-2.043414729,-1.333827268,Alert (Low Price)
+2026,Agustus,Cabai Merah Keriting,-0.434270639,0.217685787,-0.043096784,Normal
+2026,Agustus,Cabai Rawit Merah,-0.891938089,0.494063774,-0.060336971,Normal
+2026,Agustus,Bawang Merah,-0.167035982,-1.286131709,-0.838493418,Warning (Low Price)
+2026,Agustus,Bawang Putih,0.782432631,-0.311752029,0.125921835,Normal
+2026,Agustus,Daging Sapi Murni,2.985970123,2.135214881,2.475516978,Alert (High Price)
+2026,Agustus,Daging Ayam Ras,1.849542771,4.08738136,3.192245925,Alert (High Price)
+2026,Agustus,Telur Ayam Ras,-1.45148386,-1.339206501,-1.384117444,Alert (Low Price)
+2026,Agustus,Kedelai Biji Kering,1.041738073,0.790860663,0.891211627,Warning (High Price)
+2026,Agustus,Minyak Goreng Kemasan,0.484650376,0.013315739,0.201849594,Normal
+2026,Agustus,Tepung Terigu Curah,0.262712125,-0.18206215,-0.00415244,Normal
+2026,Agustus,Gula Pasir Lokal/Curah,0.407609881,-0.442249626,-0.102305824,Normal
+2026,September,Beras Premium,-0.024478758,-0.838302717,-0.512773133,Warning (Low Price)
+2026,September,Beras Medium,-0.18066561,-1.095593861,-0.729622561,Warning (Low Price)
+2026,September,Cabai Merah Keriting,0.613821772,-0.041101691,0.220867694,Normal
+2026,September,Cabai Rawit Merah,1.825888566,1.255049817,1.483385317,Alert (High Price)
+2026,September,Bawang Merah,-0.189473898,-1.105572251,-0.73913291,Warning (Low Price)
+2026,September,Bawang Putih,-0.143397436,-0.402926779,-0.299115042,Normal
+2026,September,Daging Sapi Murni,3.848315304,2.636995171,3.121523224,Alert (High Price)
+2026,September,Daging Ayam Ras,2.254476388,1.618810744,1.873077001,Alert (High Price)
+2026,September,Telur Ayam Ras,0.288460995,-1.160515074,-0.580924647,Warning (Low Price)
+2026,September,Kedelai Biji Kering,1.25290756,0.912404543,1.04860575,Alert (High Price)
+2026,September,Minyak Goreng Kemasan,0.280413734,-0.014318169,0.103574592,Normal
+2026,September,Tepung Terigu Curah,0.151474249,-0.148147179,-0.028298608,Normal
+2026,September,Gula Pasir Lokal/Curah,0.502677706,-0.400768255,-0.03938987,Normal
+2026,Oktober,Beras Premium,-0.245553614,-0.55152295,-0.429135216,Normal
+2026,Oktober,Beras Medium,-0.166681488,-0.794265572,-0.543231938,Warning (Low Price)
+2026,Oktober,Cabai Merah Keriting,2.022470847,0.60205204,1.170219562,Normal
+2026,Oktober,Cabai Rawit Merah,2.838176357,2.691914973,2.750419527,Alert (High Price)
+2026,Oktober,Bawang Merah,0.459000786,-0.903214507,-0.358328389,Normal
+2026,Oktober,Bawang Putih,-1.053216013,-0.413766688,-0.669546418,Warning (Low Price)
+2026,Oktober,Daging Sapi Murni,4.576311018,2.67910535,3.437987617,Alert (High Price)
+2026,Oktober,Daging Ayam Ras,1.490320009,0.532559977,0.91566399,Warning (High Price)
+2026,Oktober,Telur Ayam Ras,0.986311686,-2.137609649,-0.888041115,Warning (Low Price)
+2026,Oktober,Kedelai Biji Kering,0.8627961,0.895736035,0.882560061,Warning (High Price)
+2026,Oktober,Minyak Goreng Kemasan,0.233827092,0.001564076,0.094469282,Normal
+2026,Oktober,Tepung Terigu Curah,0.525594519,0.008351473,0.215248691,Normal
+2026,Oktober,Gula Pasir Lokal/Curah,0.187905961,-0.21727805,-0.055204445,Normal

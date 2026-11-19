@@ -1,0 +1,1098 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#19382f">
+
+    <meta name="description"
+          content="PANGAN ALERT AI adalah portal untuk memahami data indeks pangan Indonesia melalui informasi Bapanas dan Machine Learning.">
+
+    <title>PANGAN ALERT AI — Ruang Baca Data Pangan</title>
+
+    <link rel="stylesheet"
+          href="/public/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+        <a href="/" class="brand">
+            <span class="brand-mark">PA</span>
+
+            <span class="brand-copy">
+                <strong>PANGAN ALERT AI</strong>
+                <small>Ruang Baca Data Pangan</small>
+            </span>
+        </a>
+
+        <nav class="main-nav" aria-label="Navigasi utama">
+            <a href="#analisis">Analisis</a>
+            <a href="#panduan">Cara Membaca</a>
+            <a href="#data">Jelajahi Data</a>
+        </nav>
+
+        <span class="header-period">
+            DATA {{ latest_period|upper }}
+        </span>
+
+    </div>
+
+</header>
+
+
+<main class="page-shell">
+
+
+    <!-- HERO / PENGENALAN WEBSITE -->
+
+    <section class="hero">
+
+        <div class="hero-main">
+
+            <div class="eyebrow">
+                <span class="eyebrow-line"></span>
+                MEMBACA DATA PANGAN INDONESIA
+            </div>
+
+            <h1>
+                Mengenal pola pangan,
+                <em>memahami informasi di baliknya.</em>
+            </h1>
+
+            <p class="hero-description">
+                PANGAN ALERT AI membantu masyarakat memahami
+                informasi indeks pangan dari Badan Pangan Nasional.
+                Lihat status yang tercatat dan kenali pola data
+                melalui bantuan Machine Learning.
+            </p>
+
+            <div class="hero-actions">
+
+                <a href="#analisis" class="primary-link">
+                    Mulai analisis
+                    <span>↓</span>
+                </a>
+
+                <a href="#panduan" class="secondary-link">
+                    Pelajari cara kerjanya
+                </a>
+
+            </div>
+
+            <div class="hero-source">
+                <span class="source-dot"></span>
+                Menggunakan dataset Badan Pangan Nasional
+            </div>
+
+        </div>
+
+
+        <aside class="hero-aside">
+
+            <span class="aside-label">
+                SEKILAS TENTANG DATA
+            </span>
+
+            <div class="aside-stat">
+                <strong>{{ total_data }}</strong>
+                <span>catatan pengamatan</span>
+            </div>
+
+            <div class="aside-divider"></div>
+
+            <div class="aside-stat">
+                <strong>{{ total_komoditas }}</strong>
+                <span>jenis komoditas pangan</span>
+            </div>
+
+            <div class="aside-divider"></div>
+
+            <div class="aside-stat">
+                <strong>{{ latest_period }}</strong>
+                <span>periode terakhir dalam dataset</span>
+            </div>
+
+            <p class="aside-note">
+                Data yang tersedia merupakan snapshot
+                dataset yang digunakan dalam proyek ini.
+            </p>
+
+        </aside>
+
+    </section>
+
+
+    <!-- ANALISIS SEBAGAI AKTIVITAS UTAMA -->
+
+    <section class="analysis-section" id="analisis">
+
+        <div class="analysis-heading">
+
+            <div class="analysis-heading-copy">
+
+                <span class="section-kicker">
+                    01 / MULAI DI SINI
+                </span>
+
+                <h2>
+                    Apa yang ingin kamu ketahui?
+                </h2>
+
+                <p>
+                    Pilih bahan pangan dan periode pengamatan.
+                    Kami akan mengambil datanya secara otomatis
+                    dan menyajikan hasilnya untuk kamu.
+                </p>
+
+            </div>
+
+            <div class="analysis-symbol" aria-hidden="true">
+                DATA<br>ANALYSIS
+            </div>
+
+        </div>
+
+
+        <form method="POST"
+              action="{{ url_for('index') }}#analisis"
+              class="analysis-form">
+
+
+            <div class="form-group">
+
+                <label for="commodity">
+                    <span>1</span>
+                    Pilih bahan pangan
+                </label>
+
+                <select
+                    name="commodity"
+                    id="commodity"
+                    class="select-control"
+                    required
+                >
+
+                    {% for commodity in commodities %}
+
+                    <option
+                        value="{{ commodity }}"
+                        {% if commodity == selected_commodity %}
+                            selected
+                        {% endif %}
+                    >
+                        {{ commodity }}
+                    </option>
+
+                    {% endfor %}
+
+                </select>
+
+                <small>
+                    Contoh: beras, cabai, bawang, dan lainnya.
+                </small>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="period">
+                    <span>2</span>
+                    Pilih waktu pengamatan
+                </label>
+
+                <select
+                    name="period"
+                    id="period"
+                    class="select-control"
+                    required
+                >
+
+                    {% for period in period_options %}
+
+                    <option
+                        value="{{ period.value }}"
+                        {% if period.value == selected_period %}
+                            selected
+                        {% endif %}
+                    >
+                        {{ period.label }}
+                    </option>
+
+                    {% endfor %}
+
+                </select>
+
+                <small>
+                    Pilih bulan yang tersedia dalam dataset.
+                </small>
+
+            </div>
+
+
+            <div class="form-submit">
+
+                <button type="submit" class="analyze-button">
+
+                    <span>Analisis sekarang</span>
+
+                    <span aria-hidden="true">→</span>
+
+                </button>
+
+                <small>
+                    Tidak perlu memasukkan angka secara manual.
+                </small>
+
+            </div>
+
+        </form>
+
+
+        <div class="analysis-footnote">
+
+            <span>INFORMASI</span>
+
+            Sistem menggunakan data indeks yang sudah
+            tersedia untuk menjalankan pengelompokan
+            pola menggunakan K-Means.
+
+        </div>
+
+
+        {% if error %}
+
+        <div class="error-box" role="alert">
+
+            <strong>Analisis belum berhasil</strong>
+
+            <p>{{ error }}</p>
+
+        </div>
+
+        {% endif %}
+
+
+    </section>
+
+
+    <!-- HASIL ANALISIS -->
+
+    {% if result %}
+
+    <section class="result-section"
+             id="hasil-analisis"
+             aria-live="polite">
+
+        <div class="result-title-row">
+
+            <div>
+
+                <span class="section-kicker">
+                    HASIL PENGAMATAN
+                </span>
+
+                <h2>
+                    {{ result.commodity }}
+                </h2>
+
+                <p>{{ result.period }}</p>
+
+            </div>
+
+            <span class="result-complete">
+                Analisis selesai
+            </span>
+
+        </div>
+
+
+        <div class="result-columns">
+
+
+            <!-- STATUS BAPANAS -->
+
+            <article class="result-block official-block">
+
+                <span class="result-type">
+                    01 / INFORMASI SUMBER DATA
+                </span>
+
+                <h3>
+                    Status yang tercatat
+                </h3>
+
+                <div class="official-status">
+
+                    {{ result.status }}
+
+                </div>
+
+                <p>
+                    {{ result.status_note }}
+                </p>
+
+                <small>
+                    Status ini merupakan informasi yang tercantum
+                    dalam dataset Bapanas.
+                </small>
+
+            </article>
+
+
+            <!-- HASIL MACHINE LEARNING -->
+
+            <article class="result-block ai-block">
+
+                <span class="result-type">
+                    02 / HASIL MACHINE LEARNING
+                </span>
+
+                <h3>
+                    Pola yang ditemukan
+                </h3>
+
+                <div class="ai-cluster-name">
+
+                    {{ result.cluster_name }}
+
+                </div>
+
+                <p>
+                    {{ result.explanation }}
+                </p>
+
+                <small>
+                    Kelompok {{ result.cluster_id + 1 }}
+                    dari {{ total_cluster }} kelompok.
+                </small>
+
+            </article>
+
+        </div>
+
+
+        <!-- PENJELASAN -->
+
+        <div class="result-interpretation">
+
+            <span class="section-kicker">
+                MEMAHAMI HASIL
+            </span>
+
+            <h3>
+                Apa artinya bagi kamu?
+            </h3>
+
+            <p>
+                Sistem membandingkan nilai indeks dari
+                {{ result.commodity }} pada {{ result.period }}
+                dengan pola yang sudah dipelajari dari seluruh
+                data pelatihan.
+            </p>
+
+            <p>
+                Hasil kelompok menunjukkan kemiripan pola,
+                bukan kepastian bahwa kondisi harga akan
+                berubah menjadi lebih tinggi atau lebih rendah.
+            </p>
+
+        </div>
+
+
+        <!-- RINCIAN DATA -->
+
+        <details class="technical-details">
+
+            <summary>
+                Lihat angka indeks yang digunakan
+            </summary>
+
+            <div class="index-grid">
+
+                <div>
+                    <span>QIPA</span>
+                    <strong>
+                        {{ "%.4f"|format(result.qipa) }}
+                    </strong>
+                </div>
+
+                <div>
+                    <span>AIPA</span>
+                    <strong>
+                        {{ "%.4f"|format(result.aipa) }}
+                    </strong>
+                </div>
+
+                <div>
+                    <span>IFPA</span>
+                    <strong>
+                        {{ "%.4f"|format(result.ifpa) }}
+                    </strong>
+                </div>
+
+            </div>
+
+        </details>
+
+
+        <div class="result-disclaimer">
+
+            <strong>Catatan penting</strong>
+
+            Status sumber data dan hasil Machine Learning
+            adalah dua informasi berbeda. Pengelompokan AI
+            tidak menggantikan status resmi Bapanas dan
+            tidak memprediksi harga masa depan.
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+    <!-- PANDUAN MEMBACA WEBSITE -->
+
+    <section class="guide-section" id="panduan">
+
+        <div class="section-intro">
+
+            <span class="section-kicker">
+                02 / PANDUAN SINGKAT
+            </span>
+
+            <h2>
+                Sebenarnya, apa yang sedang kita lihat?
+            </h2>
+
+            <p>
+                Ada dua jenis informasi dalam website ini.
+                Keduanya memiliki fungsi yang berbeda.
+            </p>
+
+        </div>
+
+
+        <div class="guide-columns">
+
+            <article class="guide-item">
+
+                <span class="guide-number">01</span>
+
+                <h3>
+                    Status dari Bapanas
+                </h3>
+
+                <p>
+                    Informasi status yang sudah dicantumkan
+                    dalam dataset pemerintah untuk setiap
+                    catatan pengamatan.
+                </p>
+
+                <div class="guide-examples">
+
+                    <span>Normal</span>
+
+                    <span>Warning</span>
+
+                    <span>Alert</span>
+
+                </div>
+
+                <a href="#data">
+                    Lihat data sumber →
+                </a>
+
+            </article>
+
+
+            <article class="guide-item">
+
+                <span class="guide-number">02</span>
+
+                <h3>
+                    Pengelompokan AI
+                </h3>
+
+                <p>
+                    Komputer mempelajari kemiripan nilai indeks
+                    dan mengelompokkan data yang memiliki pola
+                    numerik serupa.
+                </p>
+
+                <div class="guide-examples">
+
+                    <span>Pola rendah</span>
+
+                    <span>Pola menengah</span>
+
+                    <span>Pola tinggi</span>
+
+                </div>
+
+                <a href="#kelompok-ai">
+                    Lihat kelompok AI →
+                </a>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- VISUALISASI DATA -->
+
+    <section class="data-section" id="grafik">
+
+        <div class="section-intro">
+
+            <span class="section-kicker">
+                03 / MELIHAT DATA
+            </span>
+
+            <h2>
+                Bagaimana pola indeks berubah?
+            </h2>
+
+            <p>
+                Grafik berikut merangkum data yang
+                tersedia pada periode pengamatan.
+            </p>
+
+        </div>
+
+
+        <div class="chart-grid">
+
+            <article class="chart-panel">
+
+                <div class="chart-heading">
+
+                    <span class="chart-index">01</span>
+
+                    <div>
+                        <h3>Perubahan indeks bulanan</h3>
+                        <p>Rata-rata nilai tiga indikator.</p>
+                    </div>
+
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="monthlyChart"></canvas>
+                </div>
+
+                <p class="chart-caption">
+                    Nilai yang ditampilkan adalah rata-rata
+                    dari seluruh komoditas dalam setiap bulan.
+                </p>
+
+            </article>
+
+
+            <article class="chart-panel">
+
+                <div class="chart-heading">
+
+                    <span class="chart-index">02</span>
+
+                    <div>
+                        <h3>Status dalam dataset</h3>
+                        <p>Jumlah catatan untuk setiap status.</p>
+                    </div>
+
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="statusChart"></canvas>
+                </div>
+
+                <p class="chart-caption">
+                    Grafik menampilkan distribusi status
+                    yang tercatat pada sumber data.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROFIL CLUSTER -->
+
+    <section class="cluster-section" id="kelompok-ai">
+
+        <div class="section-intro">
+
+            <span class="section-kicker">
+                04 / HASIL PEMBELAJARAN MESIN
+            </span>
+
+            <h2>
+                Bagaimana komputer mengelompokkan data?
+            </h2>
+
+            <p>
+                Berikut ringkasan kelompok yang dibentuk
+                model K-Means dari dataset.
+            </p>
+
+        </div>
+
+
+        <div class="cluster-table-wrapper">
+
+            <table class="cluster-table">
+
+                <thead>
+
+                    <tr>
+                        <th>Kelompok</th>
+                        <th>Karakteristik</th>
+                        <th>Jumlah catatan</th>
+                        <th>Rata-rata QIPA</th>
+                        <th>Rata-rata AIPA</th>
+                        <th>Rata-rata IFPA</th>
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% for cluster in cluster_summary %}
+
+                    <tr>
+
+                        <td>
+                            <strong>
+                                Kelompok {{ cluster.id + 1 }}
+                            </strong>
+                        </td>
+
+                        <td>
+                            {{ cluster.name }}
+                        </td>
+
+                        <td>
+                            {{ cluster.count }}
+                        </td>
+
+                        <td>
+                            {{ "%.3f"|format(cluster.qipa) }}
+                        </td>
+
+                        <td>
+                            {{ "%.3f"|format(cluster.aipa) }}
+                        </td>
+
+                        <td>
+                            {{ "%.3f"|format(cluster.ifpa) }}
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <p class="chart-caption">
+            Kelompok merupakan hasil pengolahan model,
+            bukan tingkat risiko resmi atau kategori
+            harga yang ditetapkan pemerintah.
+        </p>
+
+    </section>
+
+
+    <!-- DATA EXPLORER -->
+
+    <section class="explorer-section" id="data">
+
+        <div class="section-intro explorer-heading">
+
+            <div>
+
+                <span class="section-kicker">
+                    05 / SUMBER INFORMASI
+                </span>
+
+                <h2>
+                    Jelajahi catatan pangan
+                </h2>
+
+                <p>
+                    Cari komoditas dan periksa informasi
+                    yang menjadi dasar analisis website.
+                </p>
+
+            </div>
+
+            <div class="explorer-count">
+                {{ total_data }} catatan data
+            </div>
+
+        </div>
+
+
+        <div class="table-tools">
+
+            <input
+                type="search"
+                id="tableSearch"
+                class="search-input"
+                placeholder="Cari nama komoditas atau status..."
+                aria-label="Cari data pangan"
+            >
+
+            <span id="tableCount">
+                {{ total_data }} data ditampilkan
+            </span>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table id="dataTable">
+
+                <thead>
+
+                    <tr>
+                        <th>Tahun</th>
+                        <th>Bulan</th>
+                        <th>Komoditas</th>
+                        <th>QIPA</th>
+                        <th>AIPA</th>
+                        <th>IFPA</th>
+                        <th>Status Bapanas</th>
+                        <th>Kelompok AI</th>
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% for row in table_data %}
+
+                    <tr>
+
+                        <td>{{ row["Tahun"] }}</td>
+
+                        <td>{{ row["Bulan"] }}</td>
+
+                        <td>{{ row["Komoditas"] }}</td>
+
+                        <td>
+                            {{ "%.3f"|format(row["QIPA"]) }}
+                        </td>
+
+                        <td>
+                            {{ "%.3f"|format(row["AIPA"]) }}
+                        </td>
+
+                        <td>
+                            {{ "%.3f"|format(row["IFPA"]) }}
+                        </td>
+
+                        <td>{{ row["Status"] }}</td>
+
+                        <td>
+                            {{ row["Pola_Cluster"] }}
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <p class="table-note">
+            Seluruh angka merupakan catatan dalam dataset
+            yang digunakan, bukan data harga langsung dalam Rupiah.
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <div class="footer-main">
+
+            <div>
+                <div class="footer-brand">
+                    PANGAN ALERT AI
+                </div>
+
+                <p>
+                    Membantu masyarakat membaca informasi
+                    indeks pangan melalui data dan teknologi.
+                </p>
+            </div>
+
+            <div class="footer-source">
+
+                <span>SUMBER DATA</span>
+
+                <strong>Badan Pangan Nasional</strong>
+
+                <small>
+                    Dataset yang digunakan:
+                    Januari–Oktober 2026.
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                Proyek pembelajaran dan analisis data.
+            </span>
+
+            <span>
+                Machine Learning: K-Means Clustering.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+</main>
+
+
+<!-- DATA CHART -->
+
+<script id="dashboard-data" type="application/json">
+{{ dashboard_data | tojson }}
+</script>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+    const chartElement = document.getElementById(
+        "dashboard-data"
+    );
+
+    const dashboardData = JSON.parse(
+        chartElement.textContent
+    );
+
+
+    if (typeof Chart !== "undefined") {
+
+        Chart.defaults.font.family =
+            "Arial, sans-serif";
+
+        Chart.defaults.color = "#6c776e";
+
+
+        // GRAFIK INDEKS
+
+        new Chart(
+            document.getElementById("monthlyChart"),
+            {
+                type: "line",
+
+                data: {
+                    labels: dashboardData.monthly_labels,
+
+                    datasets: [
+                        {
+                            label: "QIPA",
+                            data: dashboardData.monthly_values.QIPA,
+                            borderColor: "#bd7048",
+                            backgroundColor: "#bd7048",
+                            borderWidth: 2.5,
+                            tension: 0.25,
+                            pointRadius: 3
+                        },
+                        {
+                            label: "AIPA",
+                            data: dashboardData.monthly_values.AIPA,
+                            borderColor: "#2875a4",
+                            backgroundColor: "#2875a4",
+                            borderWidth: 2.5,
+                            tension: 0.25,
+                            pointRadius: 3
+                        },
+                        {
+                            label: "IFPA",
+                            data: dashboardData.monthly_values.IFPA,
+                            borderColor: "#287451",
+                            backgroundColor: "#287451",
+                            borderWidth: 2.5,
+                            tension: 0.25,
+                            pointRadius: 3
+                        }
+                    ]
+                },
+
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+
+                    interaction: {
+                        intersect: false,
+                        mode: "index"
+                    },
+
+                    plugins: {
+                        legend: {
+                            position: "bottom",
+                            labels: {
+                                usePointStyle: true,
+                                padding: 20
+                            }
+                        }
+                    },
+
+                    scales: {
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        },
+
+                        y: {
+                            grid: {
+                                color: "#e8e7df"
+                            }
+                        }
+                    }
+                }
+            }
+        );
+
+
+        // GRAFIK STATUS
+
+        const statusColors = {
+            "Normal": "#43846b",
+            "Warning (Low Price)": "#d6a14c",
+            "Alert (Low Price)": "#b87542",
+            "Warning (High Price)": "#648cb0",
+            "Alert (High Price)": "#a95648"
+        };
+
+
+        new Chart(
+            document.getElementById("statusChart"),
+            {
+                type: "doughnut",
+
+                data: {
+                    labels: dashboardData.status_labels,
+
+                    datasets: [{
+                        data: dashboardData.status_values,
+
+                        backgroundColor:
+                            dashboardData.status_labels.map(
+                                label =>
+                                    statusColors[label] || "#87918a"
+                            ),
+
+                        borderColor: "#fffdf8",
+
+                        borderWidth: 3
+                    }]
+                },
+
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+
+                    cutout: "58%",
+
+                    plugins: {
+                        legend: {
+                            position: "bottom",
+
+                            labels: {
+                                usePointStyle: true,
+                                padding: 16
+                            }
+                        }
+                    }
+                }
+            }
+        );
+
+    }
+
+
+    // PENCARIAN TABEL
+
+    const searchInput = document.getElementById(
+        "tableSearch"
+    );
+
+    const tableRows = document.querySelectorAll(
+        "#dataTable tbody tr"
+    );
+
+    const tableCount = document.getElementById(
+        "tableCount"
+    );
+
+
+    searchInput.addEventListener("input", function() {
+
+        const keyword = this.value.toLowerCase().trim();
+
+        let visibleCount = 0;
+
+        tableRows.forEach(row => {
+
+            const content = row.innerText.toLowerCase();
+
+            const matched = content.includes(keyword);
+
+            row.hidden = !matched;
+
+            if (matched) {
+                visibleCount++;
+            }
+
+        });
+
+        tableCount.textContent =
+            visibleCount + " dari " +
+            tableRows.length + " catatan ditampilkan";
+
+    });
+
+</script>
+
+</body>
+</html>
