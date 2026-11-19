@@ -205,7 +205,7 @@ The dataset is processed locally by the application and used for dashboard visua
 <h2>🖥️ Application Preview</h2>
 
 <p align="center">
-<img src="docs/assets/dashboard.png" alt="PANGAN ALERT AI Dashboard Preview" width="100%" />
+<img src="public/images/image.png" alt="PANGAN ALERT AI Dashboard Preview" width="100%" />
 </p>
 
 <p align="center">
@@ -382,6 +382,15 @@ joblib
 
 <pre><code>pip install -r requirements.txt
 </code></pre>
+
+---
+<h2 align="center">🌐 Live Demo\</h2>
+
+<p align="center">   \<a href="[https://initial-pangan-alert-ai-project.vercel.app/](https://initial-pangan-alert-ai-project.vercel.app/)" target="\_blank">     \<strong>🚀 Buka PANGAN ALERT AI\</strong>   \</a> \</p>
+
+<p align="center">   Sistem dapat diakses secara langsung melalui browser tanpa perlu melakukan instalasi. \</p>
+
+<p align="center">   \<a href="[https://initial-pangan-alert-ai-project.vercel.app/](https://initial-pangan-alert-ai-project.vercel.app/)">     \<img src="[https://img.shields.io/badge/Live_Demo-Vercel-black?style=for-the-badge&logo=vercel](https://img.shields.io/badge/Live_Demo-Vercel-black?style=for-the-badge\&logo=vercel)" alt="Live Demo">   \</a> \</p>
 
 ---
 
